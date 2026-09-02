@@ -1,35 +1,23 @@
-ATOZ TOYS - FINAL ROOT DEPLOYMENT
+ATOZ TOYS V12 - FLAT ROOT DEPLOYMENT
 
-FILES
-- app.py
-- index.html
-- admin.html
-- app.js
-- admin.js
-- styles.css
-- requirements.txt
-- render.yaml
+IMPORTANT:
+- Every file is in the ROOT of this ZIP. No folders are required.
+- This version includes index.html, admin.html, CSS, JS, Flask API, PostgreSQL support, categories/sub-categories, products, ads/posters/banners, cart, search, footer, policies/help links, and store settings.
+- Admin changes are saved in PostgreSQL, so they do not require editing GitHub files.
 
-RENDER START COMMAND
+RENDER ENVIRONMENT VARIABLES:
+DATABASE_URL = your PostgreSQL Internal Database URL
+SECRET_KEY = a long random secret
+ADMIN_USER = your chosen admin username
+ADMIN_PASSWORD = your strong admin password
+
+START COMMAND:
 gunicorn app:app
 
-BUILD COMMAND
-pip install -r requirements.txt
+After deployment:
+1. Open https://YOUR-SITE.onrender.com/admin
+2. Login with ADMIN_USER / ADMIN_PASSWORD.
+3. Add/edit products, categories, ads and store text from the Admin Panel.
 
-RENDER ENVIRONMENT VARIABLES (4 TOTAL)
-1. DATABASE_URL = Render Postgres INTERNAL Database URL
-2. SECRET_KEY = Generate a long random secret in Render
-3. ADMIN_USER = your admin username
-4. ADMIN_PASSWORD = your admin password
-
-DATABASE
-This app creates these PostgreSQL tables automatically on first request:
-settings, categories, products, ads
-
-Use a separate logical database for this store if the same Postgres instance is shared with another website and that website may use the same table names.
-
-IMPORTANT
-- Do NOT create main.py.
-- Do NOT use uvicorn.
-- Do NOT add python-multipart.
-- The checkout button is still a frontend placeholder until a payment/order provider is connected.
+NOTE:
+The checkout button is a front-end placeholder until you connect your preferred payment/order provider. Do not put payment secrets in GitHub.
