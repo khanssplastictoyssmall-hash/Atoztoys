@@ -1,0 +1,9 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AtoZ Toys Admin</title><link rel="stylesheet" href="styles.css"></head>
+<body class="adminbody">
+<div id="loginBox" class="login"><img src="logo.svg"><h1>Store Admin</h1><input id="au" placeholder="Admin username"><input id="ap" type="password" placeholder="Admin password"><button onclick="login()">Login</button><p id="loginMsg"></p></div>
+<div id="adminApp" class="adminapp hidden">
+<aside class="adminnav"><img src="logo.svg"><button onclick="tab('dashboard')">📊 Dashboard</button><button onclick="tab('products')">🧸 Products</button><button onclick="tab('categories')">📂 Categories</button><button onclick="tab('ads')">🖼️ Banners / Ads</button><button onclick="tab('orders')">📦 Orders</button><button onclick="tab('settings')">⚙️ Settings</button><a href="/">↩ Storefront</a><button onclick="logout()">Logout</button></aside>
+<section class="adminmain"><div class="adminbar"><h1 id="tabTitle">Dashboard</h1><button onclick="refreshAll()">↻ Refresh</button></div><div id="panel"></div></section>
+</div><script src="admin.js"></script></body></html>
